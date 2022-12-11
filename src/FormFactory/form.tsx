@@ -1,12 +1,12 @@
 /* import { useEffect } from "react";
 import { useFormContextProvider } from "./form.context"; */
 import React from "react";
-/* export function FormBuilderComponent(props: any) {
+/* export function FormFactoryComponent(props: any) {
   // see https://react-hook-form.com/
   return <>heyhey</>;
 } */
 
-/* const FormBuilderComponent: React.FC<any> = ({ heading, content }: any) => {
+/* const FormFactoryComponent: React.FC<any> = ({ heading, content }: any) => {
   console.log("haa sans gluten");
 
   return <div>kikoo</div>;
@@ -15,7 +15,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useFormContextProvider } from "./form.context";
 
-export function FormBuilderComponent(props: any) {
+export function FormFactoryComponent(props: any) {
   // make context @input optional
   const defaultContext = useFormContextProvider();
   function getContext() {
@@ -61,4 +61,4 @@ export function FormBuilderComponent(props: any) {
   );
 }
 
-export default FormBuilderComponent;
+export default FormFactoryComponent;

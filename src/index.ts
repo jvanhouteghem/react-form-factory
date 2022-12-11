@@ -1,4 +1,4 @@
 import TestComponent from "./TestComponent";
-import FormBuilderComponent from "./form/form";
+import FormFactoryComponent from "./FormFactory/form";
 
-export { TestComponent, FormBuilderComponent };
+export { TestComponent, FormFactoryComponent };

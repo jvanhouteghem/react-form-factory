@@ -1,5 +1,6 @@
+import React from "react";
 import { render, renderHook } from "@testing-library/react";
-import { FormBuilderComponent } from "./form";
+import { FormFactoryComponent } from "./form";
 import { useFormContextProvider } from "./form.context";
 import { FORM_CATALOG_MOCK } from "./form.model";
 
@@ -19,7 +20,7 @@ describe("Form validator required", () => {
     // fail if set directly .current
     context = renderHook(() => useFormContextProvider(catalog)).result;
     container = render(
-      <FormBuilderComponent context={context.current}></FormBuilderComponent>
+      <FormFactoryComponent context={context.current}></FormFactoryComponent>
     );
   });
 
