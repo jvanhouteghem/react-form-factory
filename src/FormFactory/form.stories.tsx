@@ -6,8 +6,8 @@ import { useFormContextProvider } from "./form.context";
 import { FormFactoryComponent } from "./form";
 
 export default {
-  title: "kikoo",
-  component: TestComponent,
+  title: "FormFactory",
+  component: FormFactoryComponent,
 };
 
 export const Default = (args) => {
@@ -20,8 +20,4 @@ export const Default = (args) => {
       <FormFactoryComponent context={context}></FormFactoryComponent>
     </>
   );
-};
-
-export const Default2 = (args) => {
-  return <div>kikoo</div>;
 };
