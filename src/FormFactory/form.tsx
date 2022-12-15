@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useFormContextProvider } from "./form.context";
 
+// TODO when submit, all field should be touched
+
 export function FormFactoryComponent(props: any) {
   const defaultContext = useFormContextProvider();
   function getContext() {
