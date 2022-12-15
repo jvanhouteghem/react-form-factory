@@ -2,7 +2,8 @@ import { fireEvent, render, renderHook, screen } from "@testing-library/react";
 import React from "react";
 import { FormFactoryComponent } from "../../form";
 import { useFormContextProvider } from "../../form.context";
-import { FormCatalogItem, FORM_CATALOG_MOCK } from "../../form.model";
+import { FormCatalogItem } from "../../form.model";
+import { FORM_CATALOG_MOCK } from "../../mocks/form-nested-groups.mock";
 import { VALIDATOR_REQUIRED } from "./required.validator";
 
 describe("Form Validators Required", () => {

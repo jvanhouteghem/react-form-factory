@@ -2,7 +2,7 @@ import React from "react";
 import { render, renderHook } from "@testing-library/react";
 import { FormFactoryComponent } from "./form";
 import { useFormContextProvider } from "./form.context";
-import { FORM_CATALOG_MOCK } from "./form.model";
+import { FORM_CATALOG_MOCK } from "./mocks/form-nested-groups.mock";
 
 // https://github.com/testing-library/jest-dom#inspiration
 // for more expect matchers with Jest
