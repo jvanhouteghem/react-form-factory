@@ -1,4 +1,4 @@
-import "./components-group-vertical.scss";
+// import "./components-group-vertical.scss";
 
 export const ComponentsGroupVertical = (props: any) => {
   // todo in hook

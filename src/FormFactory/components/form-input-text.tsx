@@ -1,5 +1,6 @@
 // import { TextField } from "@mui/material";
 import { ObjectUtils } from "./../utils/object.utils";
+import { TextField } from "@mui/material";
 
 /*
 {
@@ -49,47 +50,48 @@ export function FormInputText(props: any) {
       {/*TODO find a way to remove path from inputs*/}
       {/* {JSON.stringify(props.path)} */}
       {/* TODO rename: useFbContext is unconsistant naming with context */}
-      TEXTFIELD
-      {/* <TextField
-        onBlur={(event: any) =>
-          props.useFbContext.handleBlur(props.catalogItem.id, props.path)
-        }
-        label={getValueFormattedWithRequired(
-          props.catalogItem.componentInputs
-            ? props.catalogItem.componentInputs(props.useFbContext, {
-                metadatalui: 65,
-              }).label
-            : ""
-        )} // todo change for componentinputs
-        margin="dense"
-        variant="outlined"
-        size="small"
-        value={value(props.path)}
-        inputProps={{ "data-testid": props.catalogItem.id }}
-        onChange={(event: any) =>
-          props.useFbContext.changeHandler(
-            props.catalogItem,
-            event.target.value,
-            props.path
-          )
-        }
-        error={
-          props.useFbContext.isFieldErrorFromPath(
-            props.useFbContext.data,
-            props.path
-          )
-            ? true
-            : false
-        }
-        helperText={
-          props.useFbContext.isFieldErrorFromPath(
-            props.useFbContext.data,
-            props.path
-          )
-            ? "Incorrect entry."
-            : null
-        }
-      /> */}
+      {
+        <TextField
+          onBlur={(event: any) =>
+            props.useFbContext.handleBlur(props.catalogItem.id, props.path)
+          }
+          label={getValueFormattedWithRequired(
+            props.catalogItem.componentInputs
+              ? props.catalogItem.componentInputs(props.useFbContext, {
+                  metadatalui: 65,
+                }).label
+              : ""
+          )} // todo change for componentinputs
+          margin="dense"
+          variant="outlined"
+          size="small"
+          value={value(props.path)}
+          inputProps={{ "data-testid": props.catalogItem.id }}
+          onChange={(event: any) =>
+            props.useFbContext.changeHandler(
+              props.catalogItem,
+              event.target.value,
+              props.path
+            )
+          }
+          error={
+            props.useFbContext.isFieldErrorFromPath(
+              props.useFbContext.data,
+              props.path
+            )
+              ? true
+              : false
+          }
+          helperText={
+            props.useFbContext.isFieldErrorFromPath(
+              props.useFbContext.data,
+              props.path
+            )
+              ? "Incorrect entry."
+              : null
+          }
+        />
+      }
     </>
   );
 }
