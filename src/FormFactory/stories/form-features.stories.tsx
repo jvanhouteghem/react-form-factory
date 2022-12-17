@@ -6,6 +6,8 @@ import { FORM_CATALOG_MOCK } from "../mocks/form-nested-groups.mock";
 import { FORM_CATALOG_MOCK_SINGLE_FIELD } from "../mocks/form-single-field.mock";
 import { FormCatalogItem } from "../form.model";
 import { Button } from "@mui/material";
+// import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+// import remarkGfm from 'remark-gfm';
 
 export default {
   title: "FormFactory/Form Features",
@@ -14,7 +16,6 @@ export default {
 
 const Template = (args: any) => {
   const catalog: FormCatalogItem[] = args.catalog;
-  // important to set it once, else multiple context will exist
   const context = useFormContextProvider(catalog);
 
   function handleSubmit(event: any) {
@@ -26,7 +27,6 @@ const Template = (args: any) => {
   return (
     <>
       <p>data: {JSON.stringify(context.data)}</p>
-      {JSON.stringify(JSON.stringify(context.shouldDisableSubmit()))}
       <form onSubmit={handleSubmit}>
         <FormFactoryComponent context={context}></FormFactoryComponent>
         {args.showSubmit && (
