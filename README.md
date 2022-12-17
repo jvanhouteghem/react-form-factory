@@ -6,6 +6,8 @@
 
 ## A powerful and easy tool to create forms for React applications.
 
+[![Edit jamesmcallister/styled-components-tachyons: example-site](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-form-catalog-q31frp)
+
 RFC follow these principles:
 
 - Fast: create your form in just a few minutes.
