@@ -1,5 +1,5 @@
 // import { TextField } from "@mui/material";
-import { ObjectUtils } from "./../utils/object.utils";
+import { ObjectUtils } from "../../utils/object.utils";
 import { TextField } from "@mui/material";
 import React from "react";
 
@@ -20,7 +20,7 @@ export function FormInputText(props: any) {
     const data = props.useFbContext.data;
     const value = ObjectUtils.deepFindFromPath(data, path);
 
-    isRequired();
+    // isRequired();
     return value ? value.value : "";
   }
 

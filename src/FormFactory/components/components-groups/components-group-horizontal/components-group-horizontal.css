@@ -1,0 +1,6 @@
+.components-group-horizontal {
+    margin: 15px;
+    padding: 10px;
+    border: 2px solid tomato;
+    display: flex;
+}

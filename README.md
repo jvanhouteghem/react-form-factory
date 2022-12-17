@@ -9,7 +9,7 @@
 RFC follow these principles:
 
 - Fast: create your form in just a few minutes.
-- Easy to use and developper friendly: The tool is simple and intuitive. A lot of examples are provided.
+- Easy to use and developper friendly: The tool is design to be simple and intuitive. A lot of examples are provided.
 - No boilerplate: you define a catalog and RFC do the rest.
 - Full dynamic: fields interacts which each others. You can change dynamically value, validators, display etc.
 - Fully personalisable: you can use every field you want, and display them like you want.

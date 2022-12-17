@@ -1,16 +1,15 @@
 import React from "react";
 
-import { useFormContextProvider } from "../form.context";
-import { FormFactoryComponent } from "../form";
-import { FORM_CATALOG_MOCK } from "../mocks/form-nested-groups.mock";
-import { FORM_CATALOG_MOCK_SINGLE_FIELD } from "../mocks/form-single-field.mock";
-import { FormCatalogItem } from "../form.model";
-import { Button } from "@mui/material";
 // import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 // import remarkGfm from 'remark-gfm';
+import { FormFactoryComponent } from "../form";
+import { FormCatalogItem } from "../form.model";
+import { useFormContextProvider } from "../form.context";
+import { Button } from "@mui/material";
+import { FORM_CATALOG_MOCK_SINGLE_FIELD } from "../mocks/form-single-field.mock";
 
 export default {
-  title: "FormFactory/Form Features",
+  title: "FormFactory/Form Features/Submit",
   component: FormFactoryComponent,
 };
 
@@ -43,8 +42,8 @@ const Template = (args: any) => {
   );
 };
 
-export const SubmitWithRequiredField = Template.bind({});
-SubmitWithRequiredField.args = {
+export const Submit = Template.bind({});
+Submit.args = {
   showSubmit: true,
   catalog: FORM_CATALOG_MOCK_SINGLE_FIELD,
 };
