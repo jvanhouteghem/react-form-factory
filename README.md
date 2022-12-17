@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/jvanhouteghem/react-form-factory/storybook-init/assets/imgs/logosmall.png" alt="logo" width="350"/>
 
-## A powerful and easy to create forms tool for React applications.
+## A powerful and easy tool to create forms for React applications.
 
 RFC follow these principles:
 
@@ -23,19 +23,6 @@ const FORM_CATALOG_SIMPLE_EXAMPLE: FormCatalogItem[] = [
   {
     id: "bitrate", // the field uniq key
     component: FormInputText, // your field component
-    componentInputs: (context: any, metadata?: any) => {
-      // field component props (optional)
-      return { label: "bitrateLabel" };
-    },
-    inputValue: (context: any, metadata?: any) => {
-      // field input value (optional)
-      return "";
-    },
-    onChanges: (context: any, metadata?: any) => {}, // callback when the field changes (optional)
-    validators: (context: any, metadata?: any) => {
-      // field validators (optional)
-      return [VALIDATOR_REQUIRED];
-    },
   },
 ];
 ```
