@@ -1,6 +1,7 @@
-// import "./components-group-vertical.scss";
+import "./components-group-horizontal.css";
+import React from "react";
 
-export const ComponentsGroupVertical = (props: any) => {
+export const ComponentsGroupHorizontal = (props: any) => {
   // todo in hook
   function isDisplay(): boolean {
     let res = true;
@@ -14,9 +15,9 @@ export const ComponentsGroupVertical = (props: any) => {
   return (
     <>
       {/* {JSON.stringify(props.path)} */}
-      <div className="components-group-vertical">
+      <div className="components-group-horizontal">
         {props.catalogItem.children.map((catalogItem: any, index: number) => (
-          <div key={index}>
+          <React.Fragment key={index}>
             {isDisplay() &&
               props.useFbContext.createElement(
                 catalogItem,
@@ -26,7 +27,7 @@ export const ComponentsGroupVertical = (props: any) => {
                   catalogItem.id, // todo make it auto
                 ]
               )}
-          </div>
+          </React.Fragment>
         ))}
       </div>
     </>
