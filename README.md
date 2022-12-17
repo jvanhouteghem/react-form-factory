@@ -2,6 +2,10 @@
 
 <img src="https://raw.githubusercontent.com/jvanhouteghem/react-form-factory/storybook-init/assets/imgs/logosmall.png" alt="logo" width="350"/>
 
+### (ง︡'-'︠)ง WARNING : This library is under development. (ɔ◔‿◔)ɔ ♥
+
+~
+
 ## A powerful and easy tool to create forms for React applications.
 
 RFC follow these principles:
