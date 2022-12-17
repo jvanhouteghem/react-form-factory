@@ -4,8 +4,6 @@
 
 ### (ง︡'-'︠)ง WARNING : This library is under development. (ɔ◔‿◔)ɔ ♥
 
-~
-
 ## A powerful and easy tool to create forms for React applications.
 
 RFC follow these principles:
