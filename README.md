@@ -1,4 +1,4 @@
-# React Form Catalog (RFC)
+# React Form Catalog (RFC) 📋🚀
 
 <img src="https://raw.githubusercontent.com/jvanhouteghem/react-form-factory/storybook-init/assets/imgs/logosmall.png" alt="logo" width="350"/>
 
