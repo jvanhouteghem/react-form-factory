@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import React from "react";
 
-export function FormInputText(props: any) {
+export function MuiText(props: any) {
   return (
     <>
       {/*TODO find a way to remove path from inputs*/}

@@ -1,11 +1,11 @@
-import { FormInputText } from "../components/components-items/mui/form-input-text";
+import { MuiText } from "../components/components-items/mui/text";
 import { VALIDATOR_REQUIRED } from "../validators/required/required.validator";
 import { FormCatalogItem } from "./../form.model";
 
 export const FORM_CATALOG_MOCK_SINGLE_FIELD: FormCatalogItem[] = [
   {
     id: "bitrate",
-    component: FormInputText,
+    component: MuiText,
     componentInputs: (context: any, metadata?: any) => {
       return { label: "bitrateLabel" };
     },

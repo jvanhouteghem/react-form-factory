@@ -1,9 +1,9 @@
 import { ComponentsGroupVertical } from "../components-group-vertical/components-group-vertical";
-import { FormInputText } from "../../components-items/mui/form-input-text";
+import { MuiText } from "../../components-items/mui/text";
 import { VALIDATOR_REQUIRED } from "../../../validators/required/required.validator";
 import { FormCatalogItem } from "../../../form.model";
 import { ComponentsGroupHorizontal } from "./components-group-horizontal";
-import { Select } from "../../components-items/mui/select";
+import { MuiSelect } from "../../components-items/mui/select";
 import { SelectProps } from "./../../components-items/mui/select";
 import { MuiSwitch } from "../../components-items/mui/switch";
 import { MuiCheckBox } from "../../components-items/mui/checkbox";
@@ -25,7 +25,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
         children: [
           {
             id: "mew",
-            component: FormInputText,
+            component: MuiText,
             componentInputs: () => {
               return { label: "fooLabel" };
             },
@@ -33,7 +33,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
           },
           {
             id: "bar",
-            component: Select,
+            component: MuiSelect,
             componentInputs: (context): SelectProps => {
               return {
                 label: "barLabel",
@@ -76,7 +76,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
         children: [
           {
             id: "nyee0",
-            component: FormInputText,
+            component: MuiText,
             componentInputs: () => {
               return { label: "nyee0Label" };
             },
@@ -92,7 +92,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
             children: [
               {
                 id: "foo",
-                component: FormInputText,
+                component: MuiText,
                 componentInputs: () => {
                   return { label: "huu0Label" };
                 },
@@ -104,7 +104,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
                 componentInputs: () => {
                   return { label: "huu1Label" };
                 },
-                component: FormInputText,
+                component: MuiText,
               },
             ],
           },
@@ -113,7 +113,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
             componentInputs: () => {
               return { label: "nyee1Label" };
             },
-            component: FormInputText,
+            component: MuiText,
           },
         ],
       },

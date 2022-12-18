@@ -8,7 +8,7 @@ export interface SelectProps {
   values: { key: any; value: any }[];
 }
 
-export function Select(props: any) {
+export function MuiSelect(props: any) {
   return (
     <>
       <TextField

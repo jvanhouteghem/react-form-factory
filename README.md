@@ -26,7 +26,7 @@ Here is the steps to create a new form:
 const FORM_CATALOG_SIMPLE_EXAMPLE: FormCatalogItem[] = [
   {
     id: "bitrate", // the field uniq key
-    component: FormInputText, // your field component
+    component: MuiText, // your field component
   },
 ];
 ```
@@ -55,7 +55,7 @@ a. You have to give the form context to your component (ex: props.useFbContext)
 import { TextField } from "@mui/material";
 import React from "react";
 
-export function FormInputText(props: any) {
+export function MuiText(props: any) {
   return (
     <>
       {
