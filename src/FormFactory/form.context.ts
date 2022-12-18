@@ -285,34 +285,6 @@ export const useFormContextProvider = (_catalog?: any) => {
     return res;
   }
 
-  function muiSelectItemAttributes(props) {
-    return {
-      onBlur: (event: any) =>
-        props.useFbContext.handleBlur(props.catalogItem.id, props.path),
-      // TODO fix dynamic since its array of values
-      value: props.useFbContext.getFieldValue(props),
-      inputProps: { "data-testid": props.catalogItem.id },
-      onChange: (event: any) =>
-        props.useFbContext.changeHandler(
-          props.catalogItem,
-          event.target.value,
-          props.path
-        ),
-      error: props.useFbContext.isFieldErrorFromPath(
-        props.useFbContext.data,
-        props.path
-      )
-        ? true
-        : false,
-      helperText: props.useFbContext.isFieldErrorFromPath(
-        props.useFbContext.data,
-        props.path
-      )
-        ? "Incorrect entry."
-        : null,
-    };
-  }
-
   // TODO test it with other mui field and no mui fields
   function muiItemAttributes(props) {
     return {

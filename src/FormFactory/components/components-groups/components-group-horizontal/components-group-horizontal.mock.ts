@@ -34,7 +34,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
             component: Select,
             componentInputs: (context): SelectProps => {
               return {
-                id: "barLabel",
+                label: "barLabel",
                 values: [
                   {
                     key: "USD",
