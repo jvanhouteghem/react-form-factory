@@ -77,3 +77,30 @@ b. Add this to your field component
 ```tsx
 {...props.useFbContext.muiItemAttributes(props)}
 ```
+
+### 2. How to change css of a component ?
+
+Each catalog item have an id. This id is attached to the generated component. For example:
+
+```tsx
+export const catalog: FormCatalogItem[] = [
+  {
+    id: "myField",
+    component: MuiText,
+  },
+];
+```
+
+Will generate this html code:
+
+```html
+<input id="myField" type="text" data-testid="mew" value="" (...) />
+```
+
+So if you want for example to add a border red, you have to do this:
+
+```css
+#myField {
+  border: red;
+}
+```
