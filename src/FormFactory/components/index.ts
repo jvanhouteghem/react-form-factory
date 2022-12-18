@@ -1,3 +1,3 @@
 import * as COMPONENTS_LAYOUTS from "./components-groups";
-import * as COMPONENTS_ITEMS from "./components-items";
-export { COMPONENTS_LAYOUTS, COMPONENTS_ITEMS };
+import * as COMPONENTS_ITEMS_MUI from "./components-items/mui";
+export { COMPONENTS_LAYOUTS, COMPONENTS_ITEMS_MUI };

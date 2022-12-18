@@ -1,12 +1,12 @@
 import { ComponentsGroupVertical } from "../components/components-groups/components-group-vertical/components-group-vertical";
-import { FormInputText } from "../components/components-items/form-input-text";
+import { MuiText } from "../components/components-items/mui/text";
 import { VALIDATOR_REQUIRED } from "../validators/required/required.validator";
 import { FormCatalogItem } from "./../form.model";
 
 export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
   {
     id: "bitrate",
-    component: FormInputText,
+    component: MuiText,
     componentInputs: (context: any, metadata?: any) => {
       // console.log("componentInputs", context, metadata);
       return context?.data?.dvb?.value === ""
@@ -28,7 +28,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
   },
   {
     id: "dvb",
-    component: FormInputText,
+    component: MuiText,
     validators: (context: any, metadata?: any) => {
       // console.log("validators dvb", context, metadata);
       return [VALIDATOR_REQUIRED];
@@ -40,14 +40,14 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
   },
   {
     id: "titi",
-    component: FormInputText,
+    component: MuiText,
     componentInputs: () => {
       return { label: "titiLabel" };
     },
   },
   {
     id: "nelly",
-    component: FormInputText,
+    component: MuiText,
     componentInputs: () => {
       return { label: "nellyLabel" };
     },
@@ -65,7 +65,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
     children: [
       {
         id: "mew",
-        component: FormInputText,
+        component: MuiText,
         componentInputs: () => {
           return { label: "fooLabel" };
         },
@@ -76,7 +76,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
         componentInputs: () => {
           return { label: "barLabel" };
         },
-        component: FormInputText,
+        component: MuiText,
       },
       {
         id: "nyee",
@@ -87,7 +87,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
         children: [
           {
             id: "nyee0",
-            component: FormInputText,
+            component: MuiText,
             componentInputs: () => {
               return { label: "nyee0Label" };
             },
@@ -103,7 +103,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
             children: [
               {
                 id: "foo",
-                component: FormInputText,
+                component: MuiText,
                 componentInputs: () => {
                   return { label: "huu0Label" };
                 },
@@ -115,7 +115,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
                 componentInputs: () => {
                   return { label: "huu1Label" };
                 },
-                component: FormInputText,
+                component: MuiText,
               },
             ],
           },
@@ -124,7 +124,7 @@ export const FORM_CATALOG_MOCK: FormCatalogItem[] = [
             componentInputs: () => {
               return { label: "nyee1Label" };
             },
-            component: FormInputText,
+            component: MuiText,
           },
         ],
       },

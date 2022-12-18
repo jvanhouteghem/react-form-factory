@@ -4,13 +4,12 @@ import { FormFactoryComponent } from "../../form";
 import { useFormContextProvider } from "../../form.context";
 import { FormCatalogItem } from "../../form.model";
 import { FORM_CATALOG_MOCK } from "../../mocks/form-nested-groups.mock";
-import { VALIDATOR_REQUIRED } from "./required.validator";
 
 describe("Form Validators Required", () => {
   const catalogWithOneRequired: FormCatalogItem[] = FORM_CATALOG_MOCK; /* [
     {
       id: "bitrate",
-      component: FormInputText,
+      component: MuiText,
       validators: () => [
         (data: any, id: string) => {
           return null;
@@ -19,12 +18,12 @@ describe("Form Validators Required", () => {
     },
     {
       id: "dvbWithErrors",
-      component: FormInputText,
+      component: MuiText,
       validators: () => [VALIDATOR_REQUIRED],
     },
     {
       id: "titi",
-      component: FormInputText,
+      component: MuiText,
     },
   ]; */
 
