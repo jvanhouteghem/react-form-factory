@@ -17,7 +17,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
     },
     children: [
       {
-        id: "nyee",
+        id: "nyee00",
         component: ComponentsGroupVertical,
         componentInputs: () => {
           return { label: "testlabel" };
@@ -68,7 +68,7 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
         ],
       },
       {
-        id: "nyee",
+        id: "nyee01",
         component: ComponentsGroupVertical,
         componentInputs: () => {
           return { label: "testlabel" };

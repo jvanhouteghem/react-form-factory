@@ -10,6 +10,7 @@ export function MuiText(props: any) {
 
       {
         <TextField
+          id={props.catalogItem.id}
           margin="dense"
           variant="outlined"
           size="small"

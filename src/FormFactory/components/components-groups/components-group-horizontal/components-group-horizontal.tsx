@@ -15,7 +15,7 @@ export const ComponentsGroupHorizontal = (props: any) => {
   return (
     <>
       {/* {JSON.stringify(props.path)} */}
-      <div className="components-group-horizontal">
+      <div id={props.catalogItem.id} className="components-group-horizontal">
         {props.catalogItem.children.map((catalogItem: any, index: number) => (
           <React.Fragment key={index}>
             {isDisplay() &&

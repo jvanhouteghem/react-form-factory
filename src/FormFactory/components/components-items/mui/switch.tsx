@@ -3,7 +3,7 @@ import Switch from "@mui/material/Switch";
 
 export function MuiSwitch(props) {
   return (
-    <div>
+    <div id={props.catalogItem.id}>
       <label>{props.componentInputs?.label}</label>
       <Switch {...props.useFbContext.muiSwitchItemAttributes(props)} />
     </div>

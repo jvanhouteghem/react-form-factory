@@ -12,6 +12,7 @@ export function MuiSelect(props: any) {
   return (
     <>
       <TextField
+        id={props.catalogItem.id}
         select
         SelectProps={{
           native: true,
