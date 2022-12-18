@@ -73,4 +73,7 @@ export function FormInputText(props: any) {
 ```
 
 b. Add this to your field component
-`tsx{...props.useFbContext.uiItemAttributes(props)}`
+
+```tsx
+{...props.useFbContext.uiItemAttributes(props)}
+```
