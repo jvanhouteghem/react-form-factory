@@ -5,6 +5,8 @@ import { FormCatalogItem } from "../../../form.model";
 import { ComponentsGroupHorizontal } from "./components-group-horizontal";
 import { Select } from "../../components-items/mui/select";
 import { SelectProps } from "./../../components-items/mui/select";
+import { MuiSwitch } from "../../components-items/mui/switch";
+import { MuiCheckBox } from "../../components-items/mui/checkbox";
 
 export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
   {
@@ -48,6 +50,20 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
               };
             },
             inputValue: () => "EUR", // TODO rename ? input value can be confused with component inputs
+          },
+          {
+            id: "muiswitch",
+            component: MuiSwitch,
+            componentInputs: () => {
+              return { label: "muiSwitchLabel" };
+            },
+          },
+          {
+            id: "muiCheckBox",
+            component: MuiCheckBox,
+            componentInputs: () => {
+              return { label: "muiSwitchLabel" };
+            },
           },
         ],
       },

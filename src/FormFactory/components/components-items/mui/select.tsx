@@ -16,7 +16,6 @@ export function Select(props: any) {
         SelectProps={{
           native: true,
         }}
-        helperText="Please select your currency"
         variant="standard"
         {...props.useFbContext.muiItemAttributes(props)}
       >

@@ -287,6 +287,7 @@ export const useFormContextProvider = (_catalog?: any) => {
 
   // TODO test it with other mui field and no mui fields
   function muiItemAttributes(props) {
+    // console.log("muiItemAttributes");
     return {
       label: props.useFbContext.getValueFormattedWithRequired(
         props.catalogItem.componentInputs
@@ -306,6 +307,7 @@ export const useFormContextProvider = (_catalog?: any) => {
           event.target.value,
           props.path
         ),
+      // FAIL FOR SWITCH:
       error: props.useFbContext.isFieldErrorFromPath(
         props.useFbContext.data,
         props.path
