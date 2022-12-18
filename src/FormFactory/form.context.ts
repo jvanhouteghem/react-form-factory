@@ -218,7 +218,6 @@ export const useFormContextProvider = (_catalog?: any) => {
 
   function changeHandler(catalogItem: any, formValue: any, path: any) {
     // set data + dirty and reset validators
-    //setFieldValue(catalogItem.id, formValue);
     setFieldValueFromPath(catalogItem.id, formValue, false, path);
 
     // call catalogItem onChanges
@@ -285,9 +284,47 @@ export const useFormContextProvider = (_catalog?: any) => {
     return res;
   }
 
+  // todo move in item hook
+  function muiSwitchItemAttributes(props) {
+    return {
+      label: props.useFbContext.getValueFormattedWithRequired(
+        props.catalogItem.componentInputs
+          ? props.catalogItem.componentInputs(props.useFbContext, {
+              metadatalui: 65,
+            }).label
+          : "",
+        props.catalogItem
+      ),
+      onBlur: (event: any) =>
+        props.useFbContext.handleBlur(props.catalogItem.id, props.path),
+      checked: props.useFbContext.getFieldValue(props)
+        ? props.useFbContext.getFieldValue(props)
+        : false,
+      inputProps: { "data-testid": props.catalogItem.id },
+      onChange: (event: any) =>
+        props.useFbContext.changeHandler(
+          props.catalogItem,
+          event.target.checked,
+          props.path
+        ),
+      // FAIL FOR SWITCH:
+      /* error: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? true
+        : false,
+      helperText: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? "Incorrect entry."
+        : null, */
+    };
+  }
+
   // TODO test it with other mui field and no mui fields
   function muiItemAttributes(props) {
-    // console.log("muiItemAttributes");
     return {
       label: props.useFbContext.getValueFormattedWithRequired(
         props.catalogItem.componentInputs
@@ -349,7 +386,9 @@ export const useFormContextProvider = (_catalog?: any) => {
       initForm,
       getFieldValue,
       getValueFormattedWithRequired,
+      // todo new hook file
       muiItemAttributes,
+      muiSwitchItemAttributes,
     };
   }
 

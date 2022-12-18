@@ -58,13 +58,13 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
               return { label: "muiSwitchLabel" };
             },
           },
-          {
+          /* {
             id: "muiCheckBox",
             component: MuiCheckBox,
             componentInputs: () => {
               return { label: "muiSwitchLabel" };
             },
-          },
+          }, */
         ],
       },
       {

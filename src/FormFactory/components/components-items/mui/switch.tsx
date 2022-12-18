@@ -5,7 +5,7 @@ export function MuiSwitch(props) {
   return (
     <div>
       <label>{props.componentInputs?.label}</label>
-      <Switch {...props.useFbContext.muiItemAttributes(props)} defaultChecked />
+      <Switch {...props.useFbContext.muiSwitchItemAttributes(props)} />
     </div>
   );
 }
