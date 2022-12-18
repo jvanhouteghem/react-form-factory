@@ -16,7 +16,7 @@ RFC follow these principles:
 - Full dynamic: fields interacts which each others. You can change dynamically value, validators, display etc.
 - Fully personalisable: you can use every field you want, and display them like you want.
 
-## I. How it works ?
+## I. HOW IT WORKS ?
 
 Here is the steps to create a new form:
 
@@ -45,7 +45,7 @@ const context = useFormContextProvider(FORM_CATALOG_SIMPLE_EXAMPLE);
 
 Thats all. Enjoy the form and the UI 👍.
 
-## II. More examples
+## II. MORE EXAMPLE
 
 ### 1. How to create custom field item component ?
 
