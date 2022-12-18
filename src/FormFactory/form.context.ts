@@ -262,9 +262,7 @@ export const useFormContextProvider = (_catalog?: any) => {
   function getFieldValue(props: any) {
     const data = this.data;
     const value = ObjectUtils.deepFindFromPath(data, props.path);
-    let res = value ? value.value : null;
-    console.log("res", res, "'", props);
-    return res;
+    return value ? value.value : "";
   }
 
   function isRequired(catalogItem): boolean {

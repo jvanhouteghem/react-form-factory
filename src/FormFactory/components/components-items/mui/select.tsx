@@ -32,15 +32,12 @@ export function Select(props: any) {
     },
   ];
 
-  console.log("props", props);
-
   return (
     <>
       <TextField
         id="standard-select-currency-native"
         select
         label="Native select"
-        defaultValue="EUR"
         SelectProps={{
           native: true,
         }}
