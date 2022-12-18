@@ -254,6 +254,69 @@ export const useFormContextProvider = (_catalog?: any) => {
     }
   }
 
+  // todo replace path by field id
+  function getFieldValue(path: any) {
+    const data = this.data;
+    const value = ObjectUtils.deepFindFromPath(data, path);
+    return value ? value.value : "";
+  }
+
+  function isRequired(catalogItem): boolean {
+    let res = false;
+    if (catalogItem.validators) {
+      const validators = catalogItem
+        .validators(getContext())
+        .find((v: any) => v.name === "VALIDATOR_REQUIRED");
+      res = validators ? true : false;
+    }
+    return res;
+  }
+
+  // TODO transform to function to check if validator exist (with validator as input)
+  function getValueFormattedWithRequired(value: any, catalogItem: any) {
+    let res = value;
+    if (isRequired(catalogItem)) {
+      res = `${value}*`;
+    }
+    return res;
+  }
+
+  // TODO test it with other mui field and no mui fields
+  function uiItemAttributes(props) {
+    return {
+      label: props.useFbContext.getValueFormattedWithRequired(
+        props.catalogItem.componentInputs
+          ? props.catalogItem.componentInputs(props.useFbContext, {
+              metadatalui: 65,
+            }).label
+          : "",
+        props.catalogItem
+      ),
+      onBlur: (event: any) =>
+        props.useFbContext.handleBlur(props.catalogItem.id, props.path),
+      value: props.useFbContext.getFieldValue(props.path),
+      inputProps: { "data-testid": props.catalogItem.id },
+      onChange: (event: any) =>
+        props.useFbContext.changeHandler(
+          props.catalogItem,
+          event.target.value,
+          props.path
+        ),
+      error: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? true
+        : false,
+      helperText: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? "Incorrect entry."
+        : null,
+    };
+  }
+
   function getContext() {
     // todo make it clean, all the function should be in utils object ?
     return {
@@ -278,6 +341,9 @@ export const useFormContextProvider = (_catalog?: any) => {
       setFieldValue,
       setFieldValueFromPath,
       initForm,
+      getFieldValue,
+      getValueFormattedWithRequired,
+      uiItemAttributes,
     };
   }
 
