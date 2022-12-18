@@ -44,3 +44,33 @@ const context = useFormContextProvider(FORM_CATALOG_SIMPLE_EXAMPLE);
 ```
 
 Thats all. Enjoy the form and the UI 👍.
+
+## II. More examples
+
+### 1. How to create custom field item component ?
+
+a. You have to give the form context to your component (ex: props.useFbContext)
+
+```tsx
+import { TextField } from "@mui/material";
+import React from "react";
+
+export function FormInputText(props: any) {
+  return (
+    <>
+      {
+        <TextField
+          margin="dense"
+          variant="outlined"
+          size="small"
+          /** order is important for overriding: put it after all the other attributes */
+          {...props.useFbContext.uiItemAttributes(props)}
+        />
+      }
+    </>
+  );
+}
+```
+
+b. Add this to your field component
+`tsx{...props.useFbContext.uiItemAttributes(props)}`

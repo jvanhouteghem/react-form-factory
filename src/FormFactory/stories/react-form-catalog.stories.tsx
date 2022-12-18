@@ -23,7 +23,7 @@ const Template = (args: any) => {
 
   return (
     <>
-      {/* <p>data: {JSON.stringify(context.data)}</p> */}
+      {<p>data: {JSON.stringify(context.data)}</p>}
       <form onSubmit={handleSubmit}>
         <FormFactoryComponent context={context}></FormFactoryComponent>
         <Button

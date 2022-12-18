@@ -281,6 +281,42 @@ export const useFormContextProvider = (_catalog?: any) => {
     return res;
   }
 
+  // TODO test it with other mui field and no mui fields
+  function uiItemAttributes(props) {
+    return {
+      label: props.useFbContext.getValueFormattedWithRequired(
+        props.catalogItem.componentInputs
+          ? props.catalogItem.componentInputs(props.useFbContext, {
+              metadatalui: 65,
+            }).label
+          : "",
+        props.catalogItem
+      ),
+      onBlur: (event: any) =>
+        props.useFbContext.handleBlur(props.catalogItem.id, props.path),
+      value: props.useFbContext.getFieldValue(props.path),
+      inputProps: { "data-testid": props.catalogItem.id },
+      onChange: (event: any) =>
+        props.useFbContext.changeHandler(
+          props.catalogItem,
+          event.target.value,
+          props.path
+        ),
+      error: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? true
+        : false,
+      helperText: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? "Incorrect entry."
+        : null,
+    };
+  }
+
   function getContext() {
     // todo make it clean, all the function should be in utils object ?
     return {
@@ -307,6 +343,7 @@ export const useFormContextProvider = (_catalog?: any) => {
       initForm,
       getFieldValue,
       getValueFormattedWithRequired,
+      uiItemAttributes,
     };
   }
 
