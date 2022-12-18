@@ -198,7 +198,11 @@ export const useFormContextProvider = (_catalog?: any) => {
 
   function getComponentInputs(catalogItem: any) {
     return catalogItem.componentInputs
-      ? catalogItem.componentInputs(getContext(), { metadatalui: 65 })
+      ? {
+          componentInputs: catalogItem.componentInputs(getContext(), {
+            metadatalui: 65,
+          }),
+        }
       : {};
   }
 
@@ -255,10 +259,12 @@ export const useFormContextProvider = (_catalog?: any) => {
   }
 
   // todo replace path by field id
-  function getFieldValue(path: any) {
+  function getFieldValue(props: any) {
     const data = this.data;
-    const value = ObjectUtils.deepFindFromPath(data, path);
-    return value ? value.value : "";
+    const value = ObjectUtils.deepFindFromPath(data, props.path);
+    let res = value ? value.value : null;
+    console.log("res", res, "'", props);
+    return res;
   }
 
   function isRequired(catalogItem): boolean {
@@ -281,8 +287,36 @@ export const useFormContextProvider = (_catalog?: any) => {
     return res;
   }
 
+  function muiSelectItemAttributes(props) {
+    return {
+      onBlur: (event: any) =>
+        props.useFbContext.handleBlur(props.catalogItem.id, props.path),
+      // TODO fix dynamic since its array of values
+      value: props.useFbContext.getFieldValue(props),
+      inputProps: { "data-testid": props.catalogItem.id },
+      onChange: (event: any) =>
+        props.useFbContext.changeHandler(
+          props.catalogItem,
+          event.target.value,
+          props.path
+        ),
+      error: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? true
+        : false,
+      helperText: props.useFbContext.isFieldErrorFromPath(
+        props.useFbContext.data,
+        props.path
+      )
+        ? "Incorrect entry."
+        : null,
+    };
+  }
+
   // TODO test it with other mui field and no mui fields
-  function uiItemAttributes(props) {
+  function muiItemAttributes(props) {
     return {
       label: props.useFbContext.getValueFormattedWithRequired(
         props.catalogItem.componentInputs
@@ -294,7 +328,7 @@ export const useFormContextProvider = (_catalog?: any) => {
       ),
       onBlur: (event: any) =>
         props.useFbContext.handleBlur(props.catalogItem.id, props.path),
-      value: props.useFbContext.getFieldValue(props.path),
+      value: props.useFbContext.getFieldValue(props),
       inputProps: { "data-testid": props.catalogItem.id },
       onChange: (event: any) =>
         props.useFbContext.changeHandler(
@@ -343,7 +377,7 @@ export const useFormContextProvider = (_catalog?: any) => {
       initForm,
       getFieldValue,
       getValueFormattedWithRequired,
-      uiItemAttributes,
+      muiItemAttributes,
     };
   }
 

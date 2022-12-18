@@ -1,8 +1,10 @@
 import { ComponentsGroupVertical } from "../components-group-vertical/components-group-vertical";
-import { FormInputText } from "../../components-items/form-input-text";
+import { FormInputText } from "../../components-items/mui/form-input-text";
 import { VALIDATOR_REQUIRED } from "../../../validators/required/required.validator";
 import { FormCatalogItem } from "../../../form.model";
 import { ComponentsGroupHorizontal } from "./components-group-horizontal";
+import { Select } from "../../components-items/mui/select";
+import { SelectProps } from "./../../components-items/mui/select";
 
 export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
   {
@@ -29,10 +31,23 @@ export const MOCK_FORM_NESTED_HORIZONTAL: FormCatalogItem[] = [
           },
           {
             id: "bar",
-            componentInputs: () => {
-              return { label: "barLabel" };
+            component: Select,
+            componentInputs: (context): SelectProps => {
+              return {
+                id: "barLabel",
+                values: [
+                  {
+                    key: "USD",
+                    value: "$",
+                  },
+                  {
+                    key: "EUR",
+                    value: "€",
+                  },
+                ],
+              };
             },
-            component: FormInputText,
+            inputValue: () => "EUR", // TODO rename ? input value can be confused with component inputs
           },
         ],
       },

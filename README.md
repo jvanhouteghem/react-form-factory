@@ -64,7 +64,7 @@ export function FormInputText(props: any) {
           variant="outlined"
           size="small"
           /** order is important for overriding: put it after all the other attributes */
-          {...props.useFbContext.uiItemAttributes(props)}
+          {...props.useFbContext.muiItemAttributes(props)}
         />
       }
     </>
@@ -75,5 +75,5 @@ export function FormInputText(props: any) {
 b. Add this to your field component
 
 ```tsx
-{...props.useFbContext.uiItemAttributes(props)}
+{...props.useFbContext.muiItemAttributes(props)}
 ```

@@ -1,5 +1,5 @@
 import { ComponentsGroupVertical } from "../components/components-groups/components-group-vertical/components-group-vertical";
-import { FormInputText } from "../components/components-items/form-input-text";
+import { FormInputText } from "../components/components-items/mui/form-input-text";
 import { VALIDATOR_REQUIRED } from "../validators/required/required.validator";
 import { FormCatalogItem } from "./../form.model";
 

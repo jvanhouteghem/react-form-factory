@@ -39,7 +39,3 @@ const Template = (args: any) => {
 };
 
 export const FormCatalogGroups = Template.bind({});
-FormCatalogGroups.args = {
-  showSubmit: true,
-  catalog: FORM_CATALOG_MOCK_SINGLE_FIELD,
-};
