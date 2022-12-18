@@ -244,7 +244,12 @@ export const useFormContextProvider = (_catalog?: any) => {
     callValidators: any,
     path: any
   ) {
-    const objectValue = { value: value, dirty: true, errors: undefined }; // TODO why errors: undefined ???
+    const objectValue = {
+      value: value,
+      dirty: true,
+      blur: true,
+      errors: undefined,
+    }; // TODO why errors: undefined ???
 
     setData({
       ...ObjectUtils.mergeRecursive(

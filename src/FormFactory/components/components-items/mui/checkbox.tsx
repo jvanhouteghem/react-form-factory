@@ -8,7 +8,7 @@ export function MuiCheckBox(props) {
   return (
     <div>
       <label>{props.componentInputs?.label}</label>
-      <Checkbox defaultChecked />
+      <Checkbox {...props.useFbContext.muiSwitchItemAttributes(props)} />
     </div>
   );
 }
