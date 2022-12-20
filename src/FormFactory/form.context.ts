@@ -134,7 +134,7 @@ export const useFormContextProvider = (_catalog?: any) => {
     }
   }
 
-  //
+  // TODO loop through function ? or just add loop through data ?
   function loopActionThroughCatalog(catalog: any, funct: Function, res: any) {
     for (let catalogItem of catalog) {
       if (catalogItem.children) {
@@ -179,6 +179,20 @@ export const useFormContextProvider = (_catalog?: any) => {
     let res = {};
     loopActionThroughCatalog(catalog, functLoopItemGetErrorsObj, res);
     return res;
+  }
+
+  function loopThroughData(_data, functIfValue) {
+    for (let d in _data) {
+      if (_data[d].blur !== undefined) {
+        functIfValue(_data[d]);
+      } else {
+        loopThroughData(_data[d], functIfValue);
+      }
+    }
+  }
+
+  function setAllFieldsBlured() {
+    loopThroughData(data, (data) => (data.blur = true));
   }
 
   // todo use it also in initialization ? or at least the getValidators
@@ -394,6 +408,7 @@ export const useFormContextProvider = (_catalog?: any) => {
       // todo new hook file
       muiItemAttributes,
       muiSwitchItemAttributes,
+      setAllFieldsBlured,
     };
   }
 

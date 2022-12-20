@@ -19,6 +19,7 @@ const Template = (args: any) => {
     context.submit();
     event.preventDefault(); // avoid redirection
     console.log(`Submit data: ${JSON.stringify(context.data)}`);
+    context.setAllFieldsBlured();
   }
 
   return (
@@ -26,6 +27,8 @@ const Template = (args: any) => {
       {<p>data: {JSON.stringify(context.data)}</p>}
       <form onSubmit={handleSubmit}>
         <FormFactoryComponent context={context}></FormFactoryComponent>
+        {JSON.stringify(context.isSubmitted)}-
+        {JSON.stringify(context.isValid())}
         <Button
           disabled={context.shouldDisableSubmit()}
           type="submit"
