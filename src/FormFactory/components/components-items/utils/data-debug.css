@@ -1,0 +1,15 @@
+.key {
+    font-weight: 100;
+}
+
+.title {
+    font-weight: bold;
+    border: 2px solid #1976d2;;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.data-debug {
+    padding: 5px;
+    margin: 5px;
+}

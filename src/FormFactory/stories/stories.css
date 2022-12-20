@@ -1,0 +1,8 @@
+.story-container {
+    display: flex;
+}
+
+.data-debug-container {
+    border: 2px solid #a1a1a1;
+    border-style: dashed;
+}

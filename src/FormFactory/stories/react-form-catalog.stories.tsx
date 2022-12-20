@@ -3,8 +3,9 @@ import { useFormContextProvider } from "../form.context";
 import { FormFactoryComponent } from "./../form";
 import { FormCatalogItem } from "./../form.model";
 import { Button } from "@mui/material";
-import { FORM_CATALOG_MOCK_SINGLE_FIELD } from "../mocks/form-single-field.mock";
 import { MOCK_FORM_NESTED_HORIZONTAL } from "./../components/components-groups/components-group-horizontal/components-group-horizontal.mock";
+import { DataDebug } from "./../components/components-items/utils/data-debug";
+import "./stories.css";
 
 export default {
   title: "FormFactory/FormCatalogGroups",
@@ -24,19 +25,24 @@ const Template = (args: any) => {
 
   return (
     <>
-      {<p>data: {JSON.stringify(context.data)}</p>}
-      <form onSubmit={handleSubmit}>
-        <FormFactoryComponent context={context}></FormFactoryComponent>
-        {JSON.stringify(context.isSubmitted)}-
-        {JSON.stringify(context.isValid())}
-        <Button
-          disabled={context.shouldDisableSubmit()}
-          type="submit"
-          variant="contained"
-        >
-          Submit
-        </Button>
-      </form>
+      {/* <p>data: {JSON.stringify(context.data)}</p> */}
+      <div className="story-container">
+        <form onSubmit={handleSubmit}>
+          <FormFactoryComponent context={context}></FormFactoryComponent>
+          {JSON.stringify(context.isSubmitted)}-
+          {JSON.stringify(context.isValid())}
+          <Button
+            disabled={context.shouldDisableSubmit()}
+            type="submit"
+            variant="contained"
+          >
+            Submit
+          </Button>
+        </form>
+        <div className="data-debug-container">
+          <DataDebug data={context.data}></DataDebug>
+        </div>
+      </div>
     </>
   );
 };
