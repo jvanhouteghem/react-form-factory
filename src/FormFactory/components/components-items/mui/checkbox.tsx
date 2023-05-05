@@ -4,7 +4,7 @@ import { Checkbox } from "@mui/material";
 
 const label = { inputProps: { "aria-label": "Size switch demo" } };
 
-export function MuiCheckBox(props) {
+export function MuiCheckBox(props: any) {
   return (
     <div id={props.catalogItem.id}>
       <label>{props.componentInputs?.label}</label>

@@ -20,7 +20,7 @@ export function MuiSelect(props: any) {
         variant="standard"
         {...props.useFbContext.muiItemAttributes(props)}
       >
-        {props.componentInputs.values.map((option) => (
+        {props.componentInputs.values.map((option: any) => (
           <option key={option.value} value={option.value}>
             {option.value}
           </option>

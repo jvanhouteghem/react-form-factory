@@ -181,7 +181,7 @@ export const useFormContextProvider = (_catalog?: any) => {
     return res;
   }
 
-  function loopThroughData(_data, functIfValue) {
+  function loopThroughData(_data: any, functIfValue: any) {
     for (let d in _data) {
       if (_data[d].blur !== undefined) {
         functIfValue(_data[d]);
@@ -192,7 +192,7 @@ export const useFormContextProvider = (_catalog?: any) => {
   }
 
   function setAllFieldsBlured() {
-    loopThroughData(data, (data) => (data.blur = true));
+    loopThroughData(data, (data: any) => (data.blur = true));
   }
 
   // todo use it also in initialization ? or at least the getValidators
@@ -283,7 +283,7 @@ export const useFormContextProvider = (_catalog?: any) => {
     return value ? value.value : "";
   }
 
-  function isRequired(catalogItem): boolean {
+  function isRequired(catalogItem: any): boolean {
     let res = false;
     if (catalogItem.validators) {
       const validators = catalogItem
@@ -304,7 +304,7 @@ export const useFormContextProvider = (_catalog?: any) => {
   }
 
   // todo move in item hook
-  function muiSwitchItemAttributes(props) {
+  function muiSwitchItemAttributes(props: any) {
     return {
       label: props.useFbContext.getValueFormattedWithRequired(
         props.catalogItem.componentInputs
@@ -343,7 +343,7 @@ export const useFormContextProvider = (_catalog?: any) => {
   }
 
   // TODO test it with other mui field and no mui fields
-  function muiItemAttributes(props) {
+  function muiItemAttributes(props: any) {
     return {
       label: props.useFbContext.getValueFormattedWithRequired(
         props.catalogItem.componentInputs

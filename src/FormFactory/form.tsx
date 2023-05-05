@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { useEffect } from "react";
 import { useFormContextProvider } from "./form.context";
@@ -25,9 +25,17 @@ export function FormFactoryComponent(props: any) {
     return res;
   }
 
+  const [show, setShow] = useState(false)
+  // quickfix for prob with mui rollup build when used in nextjs app
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true)
+    }, 0)
+  })
+
   return (
     <>
-      <div>
+      {show && <div>
         {props.context.catalog.map((catalogItem: any, index: number) => (
           <div key={index}>
             {isDisplay(catalogItem) &&
@@ -41,7 +49,7 @@ export function FormFactoryComponent(props: any) {
             }) */}
           </div>
         ))}
-      </div>
+      </div>}
     </>
   );
 }

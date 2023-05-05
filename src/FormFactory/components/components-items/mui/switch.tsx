@@ -1,7 +1,7 @@
 import * as React from "react";
 import Switch from "@mui/material/Switch";
 
-export function MuiSwitch(props) {
+export function MuiSwitch(props: any) {
   return (
     <div id={props.catalogItem.id}>
       <label>{props.componentInputs?.label}</label>
